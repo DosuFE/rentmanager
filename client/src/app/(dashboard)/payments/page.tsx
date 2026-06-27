@@ -129,7 +129,7 @@ export default function PaymentsPage() {
     return <p className="text-muted-foreground">Only landlords can manage payments.</p>
   }
 
-  if (isLoading) return <LoadingSpinner label="Loading payments..." />
+  if (isLoading) return <LoadingSpinner label="Loading payments..." variant="table" />
 
   const paymentStatusChart = buildPaymentStatusData(payments ?? []).map(
     (item) => ({

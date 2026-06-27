@@ -129,3 +129,46 @@
     @apply bg-background text-foreground leading-relaxed;
   }
 }
+
+@keyframes house-float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes loader-progress {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(220%);
+  }
+}
+
+@keyframes loader-shimmer {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.house-float {
+  animation: house-float 2.4s ease-in-out infinite;
+}
+
+.loader-progress-bar {
+  animation: loader-progress 1.4s ease-in-out infinite;
+}
+
+.loader-shimmer {
+  animation: loader-shimmer 1.1s ease-in-out infinite;
+}

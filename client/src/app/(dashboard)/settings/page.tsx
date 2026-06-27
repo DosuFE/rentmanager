@@ -54,7 +54,7 @@ export default function SettingsPage() {
     )
   }
 
-  if (isLoading) return <LoadingSpinner label="Loading settings..." />
+  if (isLoading) return <LoadingSpinner label="Loading settings..." variant="form" />
 
   return (
     <div className="mx-auto max-w-xl space-y-6">

@@ -68,7 +68,7 @@ function MyPaymentsContent() {
   }, [searchParams, user?.role, verifyMutation])
 
   if (!user || user.role !== 'TENANT') {
-    return <LoadingSpinner />
+    return <LoadingSpinner variant="table" />
   }
 
   if (isLoading) {

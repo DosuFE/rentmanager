@@ -83,7 +83,7 @@ export default function TenantsPage() {
     return <p className="text-muted-foreground">Only landlords can manage tenants.</p>
   }
 
-  if (isLoading) return <LoadingSpinner label="Loading tenants..." />
+  if (isLoading) return <LoadingSpinner label="Loading tenants..." variant="list" />
 
   return (
     <div className="space-y-6">

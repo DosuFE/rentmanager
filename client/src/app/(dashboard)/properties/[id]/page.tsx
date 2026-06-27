@@ -31,7 +31,7 @@ export default function PropertyDetailPage({
     enabled: !!id,
   })
 
-  if (isLoading) return <LoadingSpinner label="Loading property..." />
+  if (isLoading) return <LoadingSpinner label="Loading property..." variant="cards" />
   if (!property) return <p>Property not found.</p>
 
   return (

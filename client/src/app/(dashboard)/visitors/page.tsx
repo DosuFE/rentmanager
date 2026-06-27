@@ -54,7 +54,7 @@ export default function LandlordVisitorsPage() {
     return <p className="text-muted-foreground">Landlords only.</p>
   }
 
-  if (isLoading) return <LoadingSpinner label="Loading visitor notifications..." />
+  if (isLoading) return <LoadingSpinner label="Loading visitor notifications..." variant="list" />
 
   const pendingCount = visitors?.filter((v) => v.status === 'PENDING').length ?? 0
 

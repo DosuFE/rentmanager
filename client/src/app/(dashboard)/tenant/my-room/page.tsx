@@ -28,7 +28,7 @@ export default function MyRoomPage() {
   })
 
   if (!user || user.role !== 'TENANT') {
-    return <LoadingSpinner />
+    return <LoadingSpinner variant="cards" />
   }
 
   if (isLoading) return <LoadingSpinner label="Loading your room..." />

@@ -1,8 +1,13 @@
 import axios from 'axios'
 import { clearAuthSession } from '@/lib/auth-session'
 
+const defaultApiBaseUrl = 'https://rentmanager-frgw.onrender.com'
+
 export const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL,
+  baseURL:
+    process.env.NEXT_PUBLIC_API_URL ??
+    process.env.NEXT_PUBLIC_API_BASE_URL ??
+    defaultApiBaseUrl,
 })
 
 api.interceptors.request.use((config) => {

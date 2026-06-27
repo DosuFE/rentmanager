@@ -32,7 +32,7 @@ export default function Home() {
   if (!showLanding) {
     return (
       <div className="flex min-h-screen items-center justify-center">
-        <LoadingSpinner />
+        <LoadingSpinner variant="cards" />
       </div>
     )
   }

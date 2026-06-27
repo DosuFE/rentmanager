@@ -2,7 +2,8 @@
 
 import { useState } from 'react'
 import { useMutation, useQuery } from '@tanstack/react-query'
-import { Copy, CreditCard, Landmark, Loader2 } from 'lucide-react'
+import { Copy, CreditCard, Landmark } from 'lucide-react'
+import { LoadingSpinner } from '@/components/shared/loading-spinner'
 import { toast } from 'sonner'
 import { Button } from '@/components/ui/button'
 import {
@@ -96,7 +97,7 @@ export function PaymentPayDialog({
               disabled={paystackMutation.isPending}
             >
               {paystackMutation.isPending ? (
-                <Loader2 className="h-5 w-5 animate-spin" />
+                <span className="h-5 w-5" />
               ) : (
                 <CreditCard className="h-5 w-5" />
               )}
@@ -106,6 +107,7 @@ export function PaymentPayDialog({
                   Card, bank transfer, or USSD
                 </p>
               </div>
+              {paystackMutation.isPending ? <LoadingSpinner variant="button" label="Redirecting..." /> : null}
             </Button>
 
             <Button
@@ -124,7 +126,7 @@ export function PaymentPayDialog({
           </div>
         ) : bankDetailsQuery.isLoading ? (
           <div className="flex justify-center py-8">
-            <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
+            <LoadingSpinner variant="progress" label="Loading payment details..." />
           </div>
         ) : bankDetailsQuery.isError ? (
           <p className="text-sm text-destructive">
@@ -181,7 +183,7 @@ export function PaymentPayDialog({
                 onClick={() => confirmMutation.mutate(payment.id)}
                 disabled={confirmMutation.isPending}
               >
-                {confirmMutation.isPending ? 'Submitting...' : "I've transferred"}
+                {confirmMutation.isPending ? <LoadingSpinner variant="button" label="Submitting..." /> : "I've transferred"}
               </Button>
             </div>
           </div>

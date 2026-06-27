@@ -84,7 +84,7 @@ export default function PropertiesPage() {
     )
   }
 
-  if (isLoading) return <LoadingSpinner label="Loading properties..." />
+  if (isLoading) return <LoadingSpinner label="Loading properties..." variant="cards" />
 
   return (
     <div className="space-y-6">

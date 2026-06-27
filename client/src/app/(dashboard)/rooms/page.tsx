@@ -70,7 +70,7 @@ export default function RoomsPage() {
     return <p className="text-muted-foreground">Only landlords can manage rooms.</p>
   }
 
-  if (isLoading) return <LoadingSpinner label="Loading rooms..." />
+  if (isLoading) return <LoadingSpinner label="Loading rooms..." variant="table" />
 
   return (
     <div className="space-y-6">

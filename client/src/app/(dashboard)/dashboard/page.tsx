@@ -56,7 +56,7 @@ export default function DashboardPage() {
   }
 
   if (isLoading) {
-    return <LoadingSpinner label="Loading dashboard..." />
+    return <LoadingSpinner label="Loading dashboard..." variant="dashboard" />
   }
 
   const paymentStatusChart = buildPaymentStatusData(payments ?? []).map(

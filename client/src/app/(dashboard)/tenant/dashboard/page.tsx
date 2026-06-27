@@ -56,7 +56,7 @@ export default function TenantDashboardPage() {
     return <LoadingSpinner />
   }
 
-  if (isLoading) return <LoadingSpinner label="Loading your dashboard..." />
+  if (isLoading) return <LoadingSpinner label="Loading your dashboard..." variant="dashboard" />
 
   if (isError || !data) {
     return (

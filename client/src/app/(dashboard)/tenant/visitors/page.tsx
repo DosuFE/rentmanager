@@ -66,7 +66,7 @@ export default function TenantVisitorsPage() {
     return <p className="text-muted-foreground">Tenants only.</p>
   }
 
-  if (isLoading) return <LoadingSpinner label="Loading visitors..." />
+  if (isLoading) return <LoadingSpinner label="Loading visitors..." variant="list" />
 
   return (
     <div className="space-y-6">

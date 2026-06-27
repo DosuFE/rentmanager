@@ -74,7 +74,7 @@ export default function LandlordComplaintsPage() {
     return <p className="text-muted-foreground">Landlords only.</p>
   }
 
-  if (isLoading) return <LoadingSpinner label="Loading complaints..." />
+  if (isLoading) return <LoadingSpinner label="Loading complaints..." variant="list" />
 
   const openCount = complaints?.filter((c) => c.status === 'OPEN').length ?? 0
 

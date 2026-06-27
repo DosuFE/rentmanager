@@ -12,6 +12,7 @@ import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { LoadingSpinner } from '@/components/shared/loading-spinner'
 
 export default function RegisterPage() {
   const router = useRouter()
@@ -76,7 +77,7 @@ export default function RegisterPage() {
             </div>
 
             <Button className="w-full cursor-pointer" disabled={mutation.isPending}>
-              {mutation.isPending ? 'Loading...' : 'Register'}
+              {mutation.isPending ? <LoadingSpinner variant="button" label="Creating account..." /> : 'Register'}
             </Button>
           </form>
 
