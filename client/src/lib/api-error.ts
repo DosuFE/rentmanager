@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { getApiBaseUrl } from '@/lib/api-config'
 
 export function getApiErrorMessage(
   error: unknown,
@@ -6,7 +7,8 @@ export function getApiErrorMessage(
 ): string {
   if (axios.isAxiosError(error)) {
     if (!error.response) {
-      return 'Cannot reach the server. Make sure the API is running on port 8080.'
+      const apiUrl = getApiBaseUrl()
+      return `Cannot reach the server at ${apiUrl}. Check that the API is online and CORS is configured for this site.`
     }
 
     const message = error.response.data?.message
